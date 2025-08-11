@@ -1,0 +1,346 @@
+{
+  "RMA Strategy|RGTI|3m": [
+    {
+      "date": "2025-08-09T10:48:19.028092",
+      "params": {
+        "rma_len": 82,
+        "barsforentry": 1,
+        "barsforexit": 4,
+        "atrlen": 2,
+        "normalizedupper": 0.6000000000000001,
+        "normalizedlower": -2.0,
+        "ema_fast_len": 22,
+        "ema_slow_len": 99,
+        "trailpct": 27.5
+      },
+      "metrics": {
+        "Total Return": 33.68702338058539,
+        "Win Rate": 55.172413793103445,
+        "Total Trades": 29,
+        "Avg Bars In Trade": 54.96551724137931,
+        "Max Drawdown": -0.5649999999999995
+      }
+    }
+  ],
+  "RMA Strategy|CIFR|3m": [
+    {
+      "date": "2025-08-09T10:48:19.043550",
+      "params": {
+        "rma_len": 44,
+        "barsforentry": 1,
+        "barsforexit": 2,
+        "atrlen": 4,
+        "normalizedupper": 1.7000000000000002,
+        "normalizedlower": 0.0,
+        "ema_fast_len": 2,
+        "ema_slow_len": 89
+      },
+      "metrics": {
+        "Total Return": 40.17406764358286,
+        "Win Rate": 43.18181818181818,
+        "Total Trades": 44,
+        "Avg Bars In Trade": 38.09090909090909,
+        "Max Drawdown": -0.1299999999999999
+      }
+    }
+  ],
+  "RMA Strategy|POET|3m": [
+    {
+      "date": "2025-08-09T10:48:19.056832",
+      "params": {
+        "rma_len": 61,
+        "barsforentry": 1,
+        "barsforexit": 1,
+        "atrlen": 19,
+        "normalizedupper": 1.2000000000000002,
+        "normalizedlower": -1.2,
+        "ema_fast_len": 2,
+        "ema_slow_len": 3,
+        "emasrc": 15,
+        "trailpct": 27.5
+      },
+      "metrics": {
+        "Total Return": 2.693518651795719,
+        "Win Rate": 0.4,
+        "Total Trades": 5,
+        "Avg Bars In Trade": 25.0,
+        "Max Drawdown": -0.040000000000000036
+      }
+    }
+  ],
+  "RMA Strategy|SMCI|3m": [
+    {
+      "date": "2025-08-09T10:48:19.077011",
+      "params": {
+        "rma_len": 75,
+        "barsforentry": 4,
+        "barsforexit": 6,
+        "atrlen": 2,
+        "normalizedupper": 0.1,
+        "normalizedlower": 0.0,
+        "ema_fast_len": 29,
+        "ema_slow_len": 95,
+        "trailpct": 40.0
+      },
+      "metrics": {
+        "Total Return": 30.04555054487983,
+        "Win Rate": 52.63157894736842,
+        "Total Trades": 38,
+        "Avg Bars In Trade": 70.73684210526316,
+        "Max Drawdown": -1.5800000000000054
+      }
+    }
+  ],
+  "RMA Strategy|QBTS|3m": [
+    {
+      "date": "2025-08-09T10:48:19.095202",
+      "params": {
+        "rma_len": 75,
+        "barsforentry": 6,
+        "barsforexit": 3,
+        "atrlen": 3,
+        "normalizedupper": 1.8,
+        "normalizedlower": -2.0,
+        "ema_fast_len": 23,
+        "ema_slow_len": 86,
+        "trailpct": 40.0
+      },
+      "metrics": {
+        "Total Return": 43.5320981569238,
+        "Win Rate": 72.22222222222221,
+        "Total Trades": 18,
+        "Avg Bars In Trade": 50.833333333333336,
+        "Max Drawdown": -0.19750000000000156
+      }
+    }
+  ],
+  "RMA Strategy|PONY|3m": [
+    {
+      "date": "2025-08-09T10:48:19.111372",
+      "params": {
+        "rma_len": 40,
+        "barsforentry": 6,
+        "barsforexit": 3,
+        "atrlen": 17,
+        "normalizedupper": 2.0,
+        "normalizedlower": 0.0,
+        "ema_fast_len": 4,
+        "ema_slow_len": 69,
+        "trailpct": 3.5
+      },
+      "metrics": {
+        "Total Return": 37.0118416756648,
+        "Win Rate": 50.0,
+        "Total Trades": 38,
+        "Avg Bars In Trade": 26.263157894736842,
+        "Max Drawdown": -0.1999999999999993
+      }
+    }
+  ],
+  "RMA Strategy|COUR|3m": [
+    {
+      "date": "2025-08-09T10:48:19.133300",
+      "params": {
+        "rma_len": 68,
+        "barsforentry": 1,
+        "barsforexit": 1,
+        "atrlen": 12,
+        "normalizedupper": 0.0,
+        "normalizedlower": -1.6,
+        "ema_fast_len": 7,
+        "ema_slow_len": 40,
+        "trailpct": 20.0
+      },
+      "metrics": {
+        "Total Return": 17.883995322787417,
+        "Win Rate": 46.51162790697674,
+        "Total Trades": 43,
+        "Avg Bars In Trade": 35.30232558139535,
+        "Max Drawdown": -0.39060000000000095
+      }
+    }
+  ],
+  "RMA Strategy|QS|3m": [
+    {
+      "date": "2025-08-09T10:48:19.153259",
+      "params": {
+        "rma_len": 93,
+        "barsforentry": 10,
+        "barsforexit": 4,
+        "atrlen": 5,
+        "normalizedupper": 0.0,
+        "normalizedlower": -0.7999999999999998,
+        "ema_fast_len": 3,
+        "ema_slow_len": 91,
+        "trailpct": 13.0
+      },
+      "metrics": {
+        "Total Return": 87.85213392962251,
+        "Win Rate": 52.63157894736842,
+        "Total Trades": 38,
+        "Avg Bars In Trade": 52.76315789473684,
+        "Max Drawdown": -0.3200000000000003
+      }
+    }
+  ],
+  "RMA Strategy|SOUN|3m": [
+    {
+      "date": "2025-08-09T10:48:19.167194",
+      "params": {
+        "rma_len": 84,
+        "barsforentry": 1,
+        "barsforexit": 1,
+        "atrlen": 2,
+        "normalizedupper": 0.4,
+        "normalizedlower": -1.0,
+        "ema_fast_len": 3,
+        "ema_slow_len": 6,
+        "trailpct": 32.0
+      },
+      "metrics": {
+        "Total Return": 28.110724686434963,
+        "Win Rate": 56.52173913043478,
+        "Total Trades": 46,
+        "Avg Bars In Trade": 11.326086956521738,
+        "Max Drawdown": -0.09890000000000043
+      }
+    }
+  ],
+  "RMA Strategy|TRON|3m": [
+    {
+      "date": "2025-08-09T10:48:19.189124",
+      "params": {
+        "rma_len": 74,
+        "barsforentry": 2,
+        "barsforexit": 2,
+        "atrlen": 12,
+        "normalizedupper": 2.0,
+        "normalizedlower": -1.0,
+        "ema_fast_len": 18,
+        "ema_slow_len": 74,
+        "trailpct": 36.5
+      },
+      "metrics": {
+        "Total Return": 189.70639640825053,
+        "Win Rate": 54.54545454545454,
+        "Total Trades": 33,
+        "Avg Bars In Trade": 58.15151515151515,
+        "Max Drawdown": -0.5221999999999998
+      }
+    }
+  ],
+  "RMA Strategy|IONQ|3m": [
+    {
+      "date": "2025-08-09T10:48:19.207324",
+      "params": {
+        "rma_len": 73,
+        "barsforentry": 5,
+        "barsforexit": 3,
+        "atrlen": 5,
+        "normalizedupper": 0.0,
+        "normalizedlower": -0.3999999999999999,
+        "ema_fast_len": 10,
+        "ema_slow_len": 55,
+        "trailpct": 0.0
+      },
+      "metrics": {
+        "Total Return": 45.80252024290028,
+        "Win Rate": 97.67441860465115,
+        "Total Trades": 43,
+        "Avg Bars In Trade": 1.0,
+        "Max Drawdown": 0.0
+      }
+    }
+  ],
+  "RMA Strategy|QUBT|3m": [
+    {
+      "date": "2025-08-09T10:48:19.222031",
+      "params": {
+        "rma_len": 75,
+        "barsforentry": 3,
+        "barsforexit": 3,
+        "atrlen": 19,
+        "normalizedupper": 0.8,
+        "normalizedlower": -0.3999999999999999,
+        "ema_fast_len": 30,
+        "ema_slow_len": 96,
+        "trailpct": 7.0
+      },
+      "metrics": {
+        "Total Return": 51.193227218033755,
+        "Win Rate": 45.16129032258064,
+        "Total Trades": 31,
+        "Avg Bars In Trade": 40.58064516129032,
+        "Max Drawdown": -0.5204000000000022
+      }
+    }
+  ],
+  "RMA Strategy|SLV|3m": [
+    {
+      "date": "2025-08-09T10:48:19.235204",
+      "params": {
+        "rma_len": 43,
+        "barsforentry": 3,
+        "barsforexit": 2,
+        "atrlen": 14,
+        "normalizedupper": 1.3,
+        "normalizedlower": -0.3999999999999999,
+        "ema_fast_len": 15,
+        "ema_slow_len": 18,
+        "trailpct": 18.5
+      },
+      "metrics": {
+        "Total Return": 10.304979575486053,
+        "Win Rate": 48.888888888888886,
+        "Total Trades": 45,
+        "Avg Bars In Trade": 43.22222222222222,
+        "Max Drawdown": -0.11999999999999744
+      }
+    }
+  ],
+  "RMA Strategy|AUR|3m": [
+    {
+      "date": "2025-08-09T10:48:19.256538",
+      "params": {
+        "rma_len": 76,
+        "barsforentry": 8,
+        "barsforexit": 10,
+        "atrlen": 12,
+        "normalizedupper": 1.9000000000000001,
+        "normalizedlower": -1.7,
+        "ema_fast_len": 29,
+        "ema_slow_len": 96,
+        "trailpct": 37.5
+      },
+      "metrics": {
+        "Total Return": 9.351827692719406,
+        "Win Rate": 50.0,
+        "Total Trades": 14,
+        "Avg Bars In Trade": 72.21428571428571,
+        "Max Drawdown": -0.1048
+      }
+    }
+  ],
+  "Crypto Intraday Multi-Signal|BTC/USD|3m": [
+    {
+      "date": "2025-08-09T10:48:19.273869",
+      "params": {
+        "breakout_len": 20,
+        "momentum_len": 26,
+        "momentum_thresh": 1.5000000000000002,
+        "trend_len": 66,
+        "atr_len": 44,
+        "min_atr": 0.2,
+        "trailing_stop_pct": 4.4,
+        "max_hold_bars": 29
+      },
+      "metrics": {
+        "Total Return": 12.368194900135908,
+        "Win Rate": 75.0,
+        "Total Trades": 16,
+        "Avg Bars In Trade": 29.0,
+        "Max Drawdown": -5.198781060000033
+      }
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "RMA Strategy|RGTI|3m": [
+    {
+      "date": "2025-08-09T20:24:31.770372",
+      "params": {
+        "rma_len": 65,
+        "barsforentry": 1,
+        "barsforexit": 8,
+        "atrlen": 6,
+        "normalizedupper": 0.6000000000000001,
+        "normalizedlower": -1.1999999999999993,
+        "ema_fast_len": 23,
+        "ema_slow_len": 63,
+        "trailpct": 40.0
+      },
+      "metrics": {
+        "Score": 29.7895540743004
+      }
+    }
+  ],
+  "RMA Strategy|SOUN|3m": [
+    {
+      "date": "2025-08-09T20:29:24.349972",
+      "params": {
+        "rma_len": 80,
+        "barsforentry": 1,
+        "barsforexit": 1,
+        "atrlen": 2,
+        "normalizedupper": 1.7000000000000002,
+        "normalizedlower": -1.4999999999999996,
+        "ema_fast_len": 13,
+        "ema_slow_len": 99,
+        "trailpct": 40.0
+      },
+      "metrics": {
+        "Score": 32.55205970108902
+      }
+    }
+  ],
+  "RMA Strategy|QUBT|3m": [
+    {
+      "date": "2025-08-09T20:34:31.978773",
+      "params": {
+        "rma_len": 100,
+        "barsforentry": 1,
+        "barsforexit": 10,
+        "atrlen": 2,
+        "normalizedupper": 0.6000000000000001,
+        "normalizedlower": -0.3999999999999986,
+        "ema_fast_len": 17,
+        "ema_slow_len": 95,
+        "trailpct": 6.0
+      },
+      "metrics": {
+        "Score": 23.127927871725433
+      }
+    }
+  ],
+  "RMA Strategy|SLV|3m": [
+    {
+      "date": "2025-08-09T20:36:33.684239",
+      "params": {
+        "rma_len": 40,
+        "barsforentry": 4,
+        "barsforexit": 2,
+        "atrlen": 19,
+        "normalizedupper": 1.3,
+        "normalizedlower": -0.899999999999999,
+        "ema_fast_len": 14,
+        "ema_slow_len": 18,
+        "trailpct": 40.0
+      },
+      "metrics": {
+        "Score": 3.291089727240921
+      }
+    }
+  ],
+  "RMA Strategy|QBTS|3m": [
+    {
+      "date": "2025-08-09T20:38:22.482233",
+      "params": {
+        "rma_len": 80,
+        "barsforentry": 1,
+        "barsforexit": 6,
+        "atrlen": 11,
+        "normalizedupper": 1.2000000000000002,
+        "normalizedlower": -2.0,
+        "ema_fast_len": 23,
+        "ema_slow_len": 85,
+        "trailpct": 40.0
+      },
+      "metrics": {
+        "Score": 35.494281288206125
+      }
+    }
+  ],
+  "RMA Strategy|PONY|3m": [
+    {
+      "date": "2025-08-09T20:39:52.086819",
+      "params": {
+        "rma_len": 45,
+        "barsforentry": 8,
+        "barsforexit": 2,
+        "atrlen": 14,
+        "normalizedupper": 2.0,
+        "normalizedlower": 1.7763568394002505e-15,
+        "ema_fast_len": 2,
+        "ema_slow_len": 58,
+        "trailpct": 1.5
+      },
+      "metrics": {
+        "Score": 8.680729458347297
+      }
+    }
+  ],
+  "RMA Strategy|TRON|3m": [
+    {
+      "date": "2025-08-09T20:41:32.766028",
+      "params": {
+        "rma_len": 75,
+        "barsforentry": 5,
+        "barsforexit": 6,
+        "atrlen": 12,
+        "normalizedupper": 2.0,
+        "normalizedlower": -1.0999999999999992,
+        "ema_fast_len": 12,
+        "ema_slow_len": 89,
+        "trailpct": 15.5
+      },
+      "metrics": {
+        "Score": 68.3851173859837
+      }
+    }
+  ],
+  "RMA Strategy|SMCI|3m": [
+    {
+      "date": "2025-08-09T20:43:33.642799",
+      "params": {
+        "rma_len": 75,
+        "barsforentry": 1,
+        "barsforexit": 3,
+        "atrlen": 2,
+        "normalizedupper": 0.0,
+        "normalizedlower": -1.3999999999999995,
+        "ema_fast_len": 5,
+        "ema_slow_len": 94,
+        "trailpct": 40.0
+      },
+      "metrics": {
+        "Score": 15.393808305617158
+      }
+    }
+  ],
+  "RMA Strategy|QS|3m": [
+    {
+      "date": "2025-08-09T20:45:35.249780",
+      "params": {
+        "rma_len": 80,
+        "barsforentry": 3,
+        "barsforexit": 3,
+        "atrlen": 2,
+        "normalizedupper": 0.0,
+        "normalizedlower": -0.5999999999999988,
+        "ema_fast_len": 2,
+        "ema_slow_len": 78,
+        "trailpct": 40.0
+      },
+      "metrics": {
+        "Score": 42.058381949339946
+      }
+    }
+  ]
+}
