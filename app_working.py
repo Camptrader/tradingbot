@@ -11,13 +11,8 @@ from numpy.matlib import empty
 from datafeed import (load_csv, load_yfinance, load_alpaca, load_tvdatafeed, get_tv_ta, load_ccxt)
 from strategies.rma import rma_strategy
 from strategies.sma_cross import sma_cross_strategy
-from strategies.crypto_momentum_breakout import momentum_breakout_strategy
-from strategies.crypto_mean_reversion import mean_reversion_strategy
-from strategies.crypto_ma_cross import ma_cross_strategy
-from strategies.crypto_volatility_breakout import volatility_breakout_strategy
-from strategies.crypto_pairs_trading import pairs_trading_strategy
-from strategies.crypto_volume_price_action import volume_price_action_strategy
 from strategies.crypto_intraday_multi import crypto_intraday_multi
+from strategies.hybrid_atr_mom_break import hybrid_atr_momentum_breakout
 from alpaca.trading.client import TradingClient
 from alpaca.trading.enums import AssetClass
 
@@ -141,35 +136,11 @@ STRATEGY_REGISTRY = {
         ],
         "universal": []
     },
-    "Crypto Momentum Breakout": {
-        "function": momentum_breakout_strategy,
-        "params": ["lookback"],
-        "universal": []
-    },
-    "Crypto Mean Reversion": {
-        "function": mean_reversion_strategy,
-        "params": ["ma_len", "threshold"],
-        "universal": []
-    },
-    "Crypto MA Cross": {
-        "function": ma_cross_strategy,
-        "params": ["fast_len", "slow_len"],
-        "universal": []
-    },
-    "Crypto Volatility Breakout": {
-        "function": volatility_breakout_strategy,
-        "params": ["atr_len", "mult"],
-        "universal": []
-    },
-    "Crypto Pairs Trading": {
-        "function": pairs_trading_strategy,
-        "params": ["spread_lookback", "threshold"],
-        "universal": []
-        # Note: expects two dataframes: df1, df2
-    },
-    "Crypto Volume Price Action": {
-        "function": volume_price_action_strategy,
-        "params": ["ma_len", "vol_mult"],
+    "Crypto Hybrid ATR-Mom Break": {
+        "function": hybrid_atr_momentum_breakout,
+        "params": [
+            "breakout_len", "ema_len", "roc_thresh", "atr_len", "atr_mult"
+        ],
         "universal": []
     }
 }
@@ -180,12 +151,7 @@ CRYPTO_DISABLE_IN_OPT = ["maxtradesperday", "session_start", "session_end", "ini
 # For convenience, you can add this to each crypto strategy registry entry if you want per-strategy overrides
 CRYPTO_STRATEGY_KEYS = [
     "Crypto Intraday Multi-Signal",
-    "Crypto Momentum Breakout",
-    "Crypto Mean Reversion",
-    "Crypto MA Cross",
-    "Crypto Volatility Breakout",
-    "Crypto Pairs Trading",
-    "Crypto Volume Price Action"
+    "Crypto Hybrid ATR-Mom Break"
 ]
 
 # --- Per-strategy parameter search spaces for coordinate descent
@@ -215,28 +181,12 @@ CD_PARAM_SPACES = {
         "fast_len": (2, 16, 2),
         "slow_len": (5, 61, 5)
     },
-    "Crypto Momentum Breakout": {
-        "lookback": (10, 50, 2)
-    },
-    "Crypto Mean Reversion": {
-        "ma_len": (10, 60, 2),
-        "threshold": (1, 4, 0.2)
-    },
-    "Crypto MA Cross": {
-        "fast_len": (2, 20, 2),
-        "slow_len": (5, 60, 5)
-    },
-    "Crypto Volatility Breakout": {
-        "atr_len": (5, 30, 2),
-        "mult": (1.0, 3.0, 0.2)
-    },
-    "Crypto Pairs Trading": {
-        "spread_lookback": (10, 60, 5),
-        "threshold": (1.0, 3.0, 0.2)
-    },
-    "Crypto Volume Price Action": {
-        "ma_len": (10, 60, 2),
-        "vol_mult": (1.2, 4.0, 0.2)
+    "Crypto Hybrid ATR-Mom Break": {
+        "breakout_len": (5, 51, 5),
+        "ema_len": (10, 100, 5),
+        "roc_thresh": (0.5, 3.0, 0.1),
+        "atr_len": (5, 30, 1),
+        "atr_mult": (1.0, 3.0, 0.1)
     }
 }
 
