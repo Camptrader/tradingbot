@@ -26,7 +26,7 @@ except Exception as e:
 
 # Test YFinance Loader
 try:
-    df_yf = load_yfinance("AAPL", "1d", "2023-01-01", "2030-02-01")
+    df_yf = load_yfinance("DNN", "1d", "2023-01-01", "2030-02-01")
     preview_df(df_yf, "YFinance")
 except Exception as e:
     print("YFinance feed error:", e)
@@ -42,14 +42,14 @@ except Exception as e:
 
 # Test TVDatafeed Loader
 try:
-    df_tv = load_tvdatafeed("RGTI", "NASDAQ", "3m", 100)
+    df_tv = load_tvdatafeed("DNN", "NYSE", "3m", 100)
     preview_df(df_tv, "TVDatafeed")
 except Exception as e:
     print("TVDatafeed error:", e)
 
 # Test TradingView_TA Loader
 try:
-    df_ta = get_tv_ta("AAPL", exchange="NASDAQ", interval="1d")
+    df_ta = get_tv_ta("DNN", exchange="", interval="1d")
     preview_df(df_ta, "TradingView_TA")
 except Exception as e:
     print("TradingView_TA error:", e)

@@ -6,6 +6,7 @@ def get_tv_ta(symbol, screener='america', exchange='NASDAQ', interval='3m'):
     # Interval options: Interval.INTERVAL_1_MINUTE, etc.
     interval_map = {
         '1m': Interval.INTERVAL_1_MINUTE,
+        '3m': Interval.INTERVAL_5_MINUTES,
         '5m': Interval.INTERVAL_5_MINUTES,
         '15m': Interval.INTERVAL_15_MINUTES,
         '30m': Interval.INTERVAL_30_MINUTES,

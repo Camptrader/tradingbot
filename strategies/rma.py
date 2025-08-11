@@ -1,6 +1,10 @@
 from datetime import datetime
 import numpy as np
 import pandas as pd
+from helpers import compute_order_qty, empty_trades_df
+
+
+
 
 def tradingview_htf_ema(df, price_col, ema_len, htf_minutes):
     """
@@ -46,7 +50,6 @@ def streak_bool(arr):
 
 def rma_strategy(
         df,
-        bar_minutes=3,
         rma_len=50,
         barsforentry=2,
         barsforexit=2,
@@ -56,14 +59,15 @@ def rma_strategy(
         ema_fast_len=5,
         ema_slow_len=60,
         trailpct=50,
-        session_start="13:31",
-        session_end="19:52",
         keeplime=True,
-        initial_capital=15000,
-        qty=1000,
-        maxtradesperday=1,
-        use_session_end_rule=False
+        runtime: dict | None = None,
 ):
+    runtime = dict(runtime or {})
+      # runtime-sourced controls
+    session_start = runtime.get("session_start", "13:31")
+    session_end = runtime.get("session_end", "19:52")
+    maxtradesperday = int(runtime.get("maxtradesperday", 1))
+    use_session_end_rule = bool(runtime.get("use_session_end_rule", False))
     df = df.copy()
     df['date'] = pd.to_datetime(df['date'], utc=True)
     df = df.sort_values('date')
@@ -84,7 +88,11 @@ def rma_strategy(
     df['green'] = df['coreGreen'] | df['lime'] if keeplime else df['coreGreen']
     df['upCnt'] = streak_bool(df['green'].values)
     df['dnCnt'] = streak_bool(~df['green'].values)
-    df['ATR'] = pd.Series(df['high'] - df['low']).rolling(atrlen).mean()
+    tr = np.maximum(df['high'] - df['low'],
+                    np.abs(df['high'] - df['close'].shift(1)),
+                    np.abs(df['low'] - df['close'].shift(1)))
+    atrlen = max(1, int(atrlen))
+    df['ATR'] = pd.Series(tr).rolling(atrlen).mean()
     df['normalizedImpulse'] = df['imp'] / df['ATR']
     df['impOutside'] = (df['normalizedImpulse'] >= normalizedupper) | (df['normalizedImpulse'] <= normalizedlower)
     df['mtfTrend'] = df['ema_fast'] > df['ema_slow']
@@ -128,11 +136,13 @@ def rma_strategy(
             bars_in_trade = 0
             entry_taken = True
             trades_today += 1
+            qty_filled = compute_order_qty(df['close'].iloc[i], runtime)  # NEW
             trade_log.append({
                 'EntryTime': df["date"].iloc[i],
                 'EntryPrice': entry_price,
                 'EntryFast': df['ema_fast'].iloc[i],
                 'EntrySlow': df['ema_slow'].iloc[i],
+                'Qty': qty_filled,  # NEW
                 'BarsInTrade': 0,
                 'ExitTime': None,
                 'ExitPrice': None,
@@ -164,7 +174,7 @@ def rma_strategy(
                     'ExitPrice': exit_price,
                     'ExitFast': df['ema_fast'].iloc[i],
                     'ExitSlow': df['ema_slow'].iloc[i],
-                    'pnl': exit_price - trade_log[-1]['EntryPrice'],
+                    'pnl': (exit_price - trade_log[-1]['EntryPrice']) * trade_log[-1]['Qty'],  # FIX
                     'BarsInTrade': bars_in_trade,
                     'ExitReason': exit_reason
                 })
@@ -172,5 +182,5 @@ def rma_strategy(
     if not trades.empty and 'pnl' in trades.columns and 'EntryPrice' in trades.columns:
         trades['return'] = trades['pnl'] / trades['EntryPrice'] * 100
     else:
-        trades['return'] = []
+        trades = empty_trades_df()  # ✅ always return correct structure
     return trades, df

@@ -49,14 +49,18 @@ def get_safe_end_time(user_end):
 
 
 def load_alpaca(symbol, timeframe, start, end, key=None, secret=None, url=None, preview=True):
-    # Convert start to datetime with tzinfo if needed
     start_dt = pd.Timestamp(start)
     if start_dt.tzinfo is None:
-        start_dt = pd.Timestamp(start) if not isinstance(start, pd.Timestamp) else start
-        end_dt_Crypto = pd.Timestamp(end) if not isinstance(end, pd.Timestamp) else end
+        start_dt = start_dt.tz_localize('UTC')
 
-    # Calculate safe end time to exclude last 15 minutes
-    end_dt = get_safe_end_time(end)
+    # Always compute a UTC end
+    end_dt_raw = pd.Timestamp(end)
+    if end_dt_raw.tzinfo is None:
+        end_dt_raw = end_dt_raw.tz_localize('UTC')
+
+    # Stocks: exclude last 15 minutes; Crypto: keep raw end
+    stock_end_dt  = get_safe_end_time(end_dt_raw)
+    crypto_end_dt = end_dt_raw
 
     if '/' not in symbol:
         # STOCKS
@@ -64,9 +68,9 @@ def load_alpaca(symbol, timeframe, start, end, key=None, secret=None, url=None, 
         tf = map_tf_to_alpaca(timeframe)
         req = StockBarsRequest(
             symbol_or_symbols=[symbol],
-            timeframe=tf,
+            timeframe=map_tf_to_alpaca(timeframe),
             start=start_dt,
-            end=end_dt
+            end=stock_end_dt
         )
         bars = client.get_stock_bars(req)
         df = bars.df
@@ -87,9 +91,9 @@ def load_alpaca(symbol, timeframe, start, end, key=None, secret=None, url=None, 
         tf = map_tf_to_alpaca(timeframe)
         req = CryptoBarsRequest(
             symbol_or_symbols=[symbol],
-            timeframe=tf,
+            timeframe=map_tf_to_alpaca(timeframe),
             start=start_dt,
-            end=end_dt_Crypto
+            end=crypto_end_dt
         )
         bars = client.get_crypto_bars(req)
         df = bars.df

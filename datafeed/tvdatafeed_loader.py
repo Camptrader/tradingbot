@@ -1,4 +1,4 @@
-def load_tvdatafeed(symbol, exchange='NASDAQ', interval='3m', n_bars=2600, username=None, password=None,
+def load_tvdatafeed(symbol, exchange, interval='3m', n_bars=2600, username=None, password=None,
                     local_tz='America/Los_Angeles'):
     from tvDatafeed import TvDatafeed, Interval
     import pandas as pd
