@@ -185,24 +185,25 @@
   ],
   "RMA Strategy|SOUN|3m": [
     {
-      "date": "2025-08-09T10:48:19.167194",
+      "date": "2025-08-12T06:40:32.373808",
       "params": {
-        "rma_len": 84,
-        "barsforentry": 1,
-        "barsforexit": 1,
-        "atrlen": 2,
-        "normalizedupper": 0.4,
-        "normalizedlower": -1.0,
-        "ema_fast_len": 3,
-        "ema_slow_len": 6,
-        "trailpct": 32.0
+        "rma_len": 98,
+        "barsforentry": 2,
+        "barsforexit": 4,
+        "atrlen": 19,
+        "normalizedupper": 0.8,
+        "normalizedlower": 0.0,
+        "ema_fast_len": 28,
+        "ema_slow_len": 89,
+        "trailpct": 9.7
       },
       "metrics": {
-        "Total Return": 28.110724686434963,
-        "Win Rate": 56.52173913043478,
-        "Total Trades": 46,
-        "Avg Bars In Trade": 11.326086956521738,
-        "Max Drawdown": -0.09890000000000043
+        "Total Return %": 23.553316300971183,
+        "Total Return $": 3.0852000000000004,
+        "Win %": 66.66666666666666,
+        "Max Drawdown": -0.16999999999999993,
+        "Total Trades": 6,
+        "Avg Bars In Trade": 97.5
       }
     }
   ],

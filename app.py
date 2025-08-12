@@ -318,13 +318,13 @@ with saved_col:
             best_results = top.get("metrics", {}) or {}
 
             with saved_param_col:
-                st.markdown(f"###### Saved Best Parameters for ({strategy_choice}) ({selected_tf})")
+                st.markdown(f"###### Saved Best Parameters for {strategy_choice} ({symbol_for_data})({selected_tf})")
                 st.dataframe(
                     pd.DataFrame(list(best_params.items()), columns=["Parameter", "Value"]),
                     height=248,
                 )
             with saved_results_col:
-                st.markdown("###### Saved Best results")
+                st.markdown(f"###### Saved Best results for {strategy_choice} ({symbol_for_data})({selected_tf})")
                 st.dataframe(
                     pd.DataFrame(list(best_results.items()), columns=["Metric", "Value"]),
                     height=212,
@@ -595,14 +595,14 @@ if Optimized_Symbol == symbol_for_data:
             mr = st.session_state.get("last_main_results", None)
             with curr_param_col:
                 if bp:
-                    st.markdown(f"###### Current Parameters for {strategy_choice}")
+                    st.markdown(f"###### Current Parameters for {strategy_choice} ({symbol_for_data})({selected_tf})")
                     df_params = pd.DataFrame(list(bp.items()), columns=["Parameter", "Value"])
                     st.dataframe(df_params, height=248)
                 else:
                     st.info("No optimizer run in this session yet.")
             with cur_result_col:
                 if mr:
-                    st.markdown("Current Best results")
+                    st.markdown(f"###### Current Best results for {strategy_choice} ({symbol_for_data})({selected_tf})")
                     mr_results = pd.DataFrame(list(mr.items()), columns=["Result", "Value"])
                     st.dataframe(mr_results, height=212)
                 if st.button("💾 Save Best Parameters", key="save_best_params"):
@@ -614,6 +614,8 @@ if Optimized_Symbol == symbol_for_data:
                         params=bp,
                         metrics=mr,
                     )
+                    #(strategy, symbol, tf, params, metrics, registry_path=REGISTRY_FILE)
+
                     st.success("Parameters saved for this strategy / symbol / timeframe!")
 
     render_visuals(

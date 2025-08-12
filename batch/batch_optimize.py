@@ -8,6 +8,9 @@ from datafeed import load_alpaca
 # ==== CONFIG ====
 
 WATCHLIST = [
+    "CIFR",
+    "COUR",
+    "IONQ",
     "RGTI",
     "SOUN",
     "QUBT",
@@ -21,7 +24,7 @@ WATCHLIST = [
 TIMEFRAME = "3m"
 STRATEGY = "RMA Strategy"
 DAYS_LOOKBACK = 30
-TRIALS = 1
+TRIALS = 3
 PENDING_REGISTRY_FILE = "../best_params_registry_pending.json"
 STOP_FILE = "stop_batch.txt"  # stop flag file
 
